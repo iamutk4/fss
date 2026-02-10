@@ -138,7 +138,7 @@ export default function Home() {
               You just made me the happiest person ever! 🥰
             </p>
             <video
-              src="/assets/vid1.MP4"
+              src="/assets/vid1.mp4"
               className="success-image"
               autoPlay
               loop
@@ -159,7 +159,7 @@ export default function Home() {
                 <span className="polaroid-caption">✨</span>
               </div>
               <div className="polaroid polaroid-4">
-                <img src="/assets/img4.JPEG" alt="Us 4" />
+                <img src="/assets/img4.jpeg" alt="Us 4" />
                 <span className="polaroid-caption">💗</span>
               </div>
               <div className="polaroid polaroid-5">
