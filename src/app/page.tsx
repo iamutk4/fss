@@ -37,14 +37,22 @@ function FloatingHearts() {
 
 function Confetti() {
   const [pieces, setPieces] = useState<
-    { id: number; left: string; color: string; delay: string; duration: string; size: number }[]
+    {
+      id: number;
+      left: string;
+      color: string;
+      delay: string;
+      duration: string;
+      size: number;
+    }[]
   >([]);
 
   useEffect(() => {
     const generated = Array.from({ length: 60 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
-      color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+      color:
+        CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
       delay: `${Math.random() * 2}s`,
       duration: `${2 + Math.random() * 3}s`,
       size: 6 + Math.random() * 10,
@@ -76,7 +84,10 @@ function Confetti() {
 export default function Home() {
   const [noCount, setNoCount] = useState(0);
   const [accepted, setAccepted] = useState(false);
-  const [noPosition, setNoPosition] = useState<{ top: number; left: number } | null>(null);
+  const [noPosition, setNoPosition] = useState<{
+    top: number;
+    left: number;
+  } | null>(null);
   const [messageKey, setMessageKey] = useState(0);
 
   const getRandomPosition = useCallback(() => {
@@ -127,7 +138,7 @@ export default function Home() {
               You just made me the happiest person ever! 🥰
             </p>
             <video
-              src="/assets/video1.MP4"
+              src="/assets/vid1.MP4"
               className="success-image"
               autoPlay
               loop
@@ -137,12 +148,8 @@ export default function Home() {
           </div>
 
           <div className="gallery-section">
-            <h2 className="gallery-title">Been a journey ..  💕</h2>
+            <h2 className="gallery-title">Been a journey .. 💕</h2>
             <div className="photo-collage">
-              <div className="polaroid polaroid-1">
-                <img src="/assets/img1.JPEG" alt="Us 1" />
-                <span className="polaroid-caption">💖</span>
-              </div>
               <div className="polaroid polaroid-2">
                 <img src="/assets/img2.JPEG" alt="Us 2" />
                 <span className="polaroid-caption">🥰</span>
@@ -152,7 +159,7 @@ export default function Home() {
                 <span className="polaroid-caption">✨</span>
               </div>
               <div className="polaroid polaroid-4">
-                <img src="/assets/img4.JPG" alt="Us 4" />
+                <img src="/assets/img4.JPEG" alt="Us 4" />
                 <span className="polaroid-caption">💗</span>
               </div>
               <div className="polaroid polaroid-5">
@@ -175,10 +182,6 @@ export default function Home() {
                 <img src="/assets/img9.JPEG" alt="Us 9" />
                 <span className="polaroid-caption">💖</span>
               </div>
-              <div className="polaroid polaroid-10">
-                <img src="/assets/img10.JPEG" alt="Us 10" />
-                <span className="polaroid-caption">💖</span>
-              </div>
             </div>
           </div>
         </div>
@@ -191,10 +194,14 @@ export default function Home() {
       <FloatingHearts />
       <div className="valentine-container">
         <div className="question-card">
-          <p className="greeting-text">Hello babydoll 🧸</p>
+          <p className="greeting-text">Hello baby 🧸</p>
           <p className="question-subtitle">
             I have a very important question for you... 💌
           </p>
+          <div className="polaroid polaroid-main">
+            <img src="/assets/img1.JPEG" alt="Us 1" />
+            <span className="polaroid-caption">💖</span>
+          </div>
           <h1 className="question-title">Will you be my Valentine?</h1>
 
           {noCount > 0 && noCount <= 5 && (
@@ -237,10 +244,7 @@ export default function Home() {
                 No 😅
               </button>
             ) : (
-              <button
-                className="btn-no btn-no-final"
-                onClick={handleFinalNo}
-              >
+              <button className="btn-no btn-no-final" onClick={handleFinalNo}>
                 Fine, I got no other choice 😌
               </button>
             )}

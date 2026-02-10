@@ -363,6 +363,9 @@ body {
 }
 
 /* Each polaroid gets a unique tilt and offset */
+.polaroid-main {
+  margin-bottom: 2rem;
+}
 .polaroid-1 {
   transform: rotate(-6deg) translateY(8px);
   animation-delay: 0.1s;
